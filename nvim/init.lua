@@ -30,22 +30,35 @@ vim.cmd("set laststatus=3")
 
 
 vim.keymap.set("n", "<leader>vs", function()
-        vim.cmd("vsplit")
-    end, { desc="split verticaly" }
+    vim.cmd("split")
+    vim.cmd("wincmd j")
+end, { desc="split vertically" }
 )
 vim.keymap.set("n", "<leader>hs", function()
-        vim.cmd("split")
-    end, { desc="split horizantaly" }
+    vim.cmd("vsplit")
+    vim.cmd("wincmd l")
+end, { desc="split horizantally" }
 )
+
+vim.keymap.set("n", "<leader>t", function()
+    vim.cmd("term")
+end, { desc="open terminal" }
+)
+
 vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>", { silent = true })
 vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>", { silent = true })
 vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>", { silent = true })
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>", { silent = true })
+vim.keymap.set("t", "<C-h>", [[<C-\><C-N><C-w>h]], { silent = true })
+vim.keymap.set("t", "<C-j>", [[<C-\><C-N><C-w>j]], { silent = true })
+vim.keymap.set("t", "<C-k>", [[<C-\><C-N><C-w>k]], { silent = true })
+vim.keymap.set("t", "<C-l>", [[<C-\><C-N><C-w>l]], { silent = true })
+
 vim.keymap.set("n", "<leader>c", function()
     vim.cmd("bd")
-    end, { desc = "unload buffer and delete it from buffer list" }
+end, { desc = "unload buffer and delete it from buffer list" }
 )
 vim.keymap.set("n", "<leader>cc", function()
     vim.cmd("bd!")
-    end, { desc = "unload buffer(changes lost) and delete it from buffer list" }
+end, { desc = "unload buffer(changes lost) and delete it from buffer list" }
 )
