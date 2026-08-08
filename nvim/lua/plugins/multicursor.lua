@@ -12,10 +12,10 @@ return {
         set({"n", "x"}, "<leader><up>", function() mc.lineSkipCursor(-1) end)
         set({"n", "x"}, "<leader><down>", function() mc.lineSkipCursor(1) end)
 
-        set({"n", "x"}, "<C-n>", function() mc.matchAddCursor(1) end)
-        set({"n", "x"}, "<C-s>", function() mc.matchSkipCursor(1) end)
-        set({"n", "x"}, "<C-N>", function() mc.matchAddCursor(-1) end)
-        set({"n", "x"}, "<C-S>", function() mc.matchSkipCursor(-1) end)
+        set({"n", "x"}, "<C-n>", function() mc.matchAddCursor(-1) end)
+        set({"n", "x"}, "<C-s>", function() mc.matchSkipCursor(-1) end)
+        set({"n", "x"}, "<C-N>", function() mc.matchAddCursor(1) end)
+        set({"n", "x"}, "<C-S>", function() mc.matchSkipCursor(1) end)
 
         set("n", "<c-leftmouse>", mc.handleMouse)
         set("n", "<c-leftdrag>", mc.handleMouseDrag)
@@ -26,9 +26,6 @@ return {
         set({"n", "x"}, "ga", mc.addCursorOperator)
 
         set("n", "<leader>a", mc.alignCursors)
-
-        set("x", "<leader>t", function() mc.transposeCursors(1) end)
-        set("x", "<leader>T", function() mc.transposeCursors(-1) end)
 
         set("x", "I", mc.insertVisual)
         set("x", "A", mc.appendVisual)
